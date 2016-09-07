@@ -12,7 +12,7 @@ use App\Forum;
 
 class TopicController extends Controller
 {
-    public function show($id)
+    public function show($id, $name)
     {
         $topic = Topic::findOrFail($id);
         $posts = $topic->posts()->paginate(15);

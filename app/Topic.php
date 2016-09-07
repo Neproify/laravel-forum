@@ -19,7 +19,7 @@ class Topic extends Model
 
     public function getUrl()
     {
-        return url('topic', ['id' => $this->id, 'name' => $this->name]);
+        return url('topic', ['id' => $this->id, 'name' => str_slug($this->name)]);
     }
 
     public function forum()

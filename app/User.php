@@ -34,6 +34,6 @@ class User extends Authenticatable
 
     public function getUrl()
     {
-        return url('user', ['id' => $this->id, 'name' => $this->name]);
+        return url('user', ['id' => $this->id, 'name' => str_slug($this->name)]);
     }
 }

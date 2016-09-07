@@ -15,7 +15,7 @@ class Forum extends Model
 
     public function getUrl()
     {
-        return url('forum', ['id' => $this->id, 'name' => $this->name]);
+        return url('forum', ['id' => $this->id, 'name' => str_slug($this->name)]);
     }
 
     public function topics()
