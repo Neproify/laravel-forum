@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Auth;
+
 use App\User;
 use Validator;
 use App\Http\Controllers\Controller;
@@ -71,6 +73,6 @@ class RegisterController extends Controller
 
     protected function guard()
     {
-        return Auth::guard('guard-name');
+        return Auth::guard('web');
     }
 }
