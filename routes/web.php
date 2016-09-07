@@ -27,7 +27,7 @@ Route::post('/topic/new', 'TopicController@create')->middleware('auth');;
 Route::get('/topic/update/{id}', 'TopicController@updateForm')->middleware('auth');
 Route::post('/topic/update', 'TopicController@update')->middleware('auth');
 Route::get('/topic/delete/{id}', 'TopicController@delete')->middleware('auth');
-Route::get('/topic/{id}/{name}', 'TopicController@show');
+Route::get('/topic/{id}', 'TopicController@show')->name('topic');
 
 Route::get('/post/new/{id}', 'PostController@createForm')->middleware('auth');
 Route::post('/post/new', 'PostController@create')->middleware('auth');
