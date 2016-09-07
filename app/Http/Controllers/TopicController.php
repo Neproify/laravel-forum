@@ -16,12 +16,12 @@ class TopicController extends Controller
     {
         $topic = Topic::findOrFail($id);
         $posts = $topic->posts()->paginate(15);
-        return view('forum\topic\show', ['topic' => $topic, 'posts' => $posts]);
+        return view('forum.topic.show', ['topic' => $topic, 'posts' => $posts]);
     }
 
     public function createForm($id)
     {
-        return view('forum\topic\new', ['id' => $id, 'forum' => Forum::findOrFail($id)]);
+        return view('forum.topic.new', ['id' => $id, 'forum' => Forum::findOrFail($id)]);
     }
 
     protected function create(Request $request)
@@ -49,7 +49,7 @@ class TopicController extends Controller
         $topic = Topic::findOrFail($id);
         if($topic->canEdit() == false)
             return Redirect::to($topic->getUrl());
-        return view('forum\topic\edit', ['id' => $id, 'topic' => $topic]);
+        return view('forum.topic.edit', ['id' => $id, 'topic' => $topic]);
     }
 
     protected function update(Request $request)

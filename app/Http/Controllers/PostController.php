@@ -14,7 +14,7 @@ class PostController extends Controller
 {
     public function createForm($id)
     {
-        return view('forum\post\new', ['id' => $id, 'topic' => Topic::findOrFail($id)]);
+        return view('forum.post.new', ['id' => $id, 'topic' => Topic::findOrFail($id)]);
     }
 
     public function updateForm($id)
@@ -22,7 +22,7 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         if($post->canEdit() == false)
             return Redirect::to($post->topic->getUrl());
-        return view('forum\post\edit', ['id' => $id, 'topic' => $post->topic, 'post' => $post]);
+        return view('forum.post.edit', ['id' => $id, 'topic' => $post->topic, 'post' => $post]);
     }
 
     protected function update(Request $request)

@@ -19,7 +19,7 @@ class ForumController extends Controller
 
     public function index()
     {
-        return view('admin\forum\index', ['forums' => Forum::all()]);
+        return view('admin.forum.index', ['forums' => Forum::all()]);
     }
 
     public function delete($id)
@@ -39,7 +39,7 @@ class ForumController extends Controller
 
     public function updateForm($id)
     {
-        return View('admin\forum\edit', ['forum' => Forum::findOrFail($id)]);
+        return View('admin.forum.edit', ['forum' => Forum::findOrFail($id)]);
     }
 
     public function update(Request $request)
