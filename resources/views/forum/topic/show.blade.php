@@ -12,7 +12,7 @@
                 <div class="clearfix"></div>
             @endif
             <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="panel-heading clearfix">
                     {{ $topic->name }}
                     <div class="pull-right">
                         Napisane przez <a href="{{ $topic->author->getUrl() }}">{{ $topic->author->name }}</a>, {{ $topic->created_at }}

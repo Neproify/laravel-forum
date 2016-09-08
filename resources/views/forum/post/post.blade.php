@@ -1,5 +1,5 @@
 <div class="panel panel-default">
-	<div class="panel-heading">
+	<div class="panel-heading clearfix">
         Odpowiedź do: {{ $post->topic->name }}
         <div class="pull-right">
             Napisane przez <a href="{{ $post->author->getUrl() }}">{{ $post->author->name }}</a>, {{ $post->created_at }}
