@@ -3,8 +3,10 @@
 		<a href="{{ $forum->getUrl() }}">{{ $forum->name }}</a>
 	</div>
 	<div class="panel-body">
+		<div class="col-md-8">
 		{{ $forum->description }}
-		<div class="pull-right">
+		</div>
+		<div class="col-md-4">
 			@if ($forum->getNewestTopic())
 				Ostatni temat: <br />
 				<a href="{{ $forum->getNewestTopic()->getUrl() }}">{{ $forum->getNewestTopic()->name }}</a><br />
