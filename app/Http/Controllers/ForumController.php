@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Forum;
+use App\User;
 
 class ForumController extends Controller
 {
@@ -23,7 +24,7 @@ class ForumController extends Controller
      */
     public function index()
     {
-        return view('forum.index', ['forums' => Forum::all()]);
+        return view('forum.index', ['forums' => Forum::all(), 'activeUsers' => User::where('last_active', '>', date('Y-m-d H:i:s', time() - 15 * 60))->get()]);
     }
 
     public function show($id, $name)
