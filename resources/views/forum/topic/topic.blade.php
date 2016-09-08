@@ -4,9 +4,13 @@
 	</div>
 	<div class="panel-body">
 		<div class="col-md-8">
-		{!! substr($topic->content, 0, 64) !!}
+		{!! substr($topic->content, 0, 128) !!}
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-2">
+			<a href="{{ $topic->author->getUrl() }}">{{ $topic->author->name }}</a><br />
+			{{ $topic->created_at }}
+		</div>
+		<div class="col-md-2">
 			@if ($topic->getNewestPost())
 				Ostatnia odpowiedź: <br />
 				{{ $topic->getNewestPost()->created_at }} <br />
