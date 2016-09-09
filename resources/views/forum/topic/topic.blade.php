@@ -1,8 +1,6 @@
-<div class="panel panel-default clearfix">
-	<div class="panel-heading">
-		<a href="{{ $topic->getUrl() }}">{{ $topic->name }}</a>
-	</div>
-	<div class="panel-body">
+<div class="card">
+	<div class="card-block">
+		<h4 class="card-title"><a href="{{ $topic->getUrl() }}">{{ $topic->name }}</a></h4>
 		<div class="col-md-8">
 		{!! substr($topic->content, 0, 128) !!}
 		</div>

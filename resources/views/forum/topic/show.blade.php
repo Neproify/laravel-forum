@@ -11,14 +11,14 @@
                 </div>
                 <div class="clearfix"></div>
             @endif
-            <div class="panel panel-default">
-                <div class="panel-heading clearfix">
-                    {{ $topic->name }}
-                    <div class="pull-right">
-                        Napisane przez <a href="{{ $topic->author->getUrl() }}">{{ $topic->author->name }}</a>, {{ $topic->created_at }}
-                    </div>
-                </div>
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">
+                        {{ $topic->name }}
+                        <div class="pull-right">
+                            Napisane przez <a href="{{ $topic->author->getUrl() }}">{{ $topic->author->name }}</a>, {{ $topic->created_at }}
+                        </div>
+                    </h4>
                     {!! $topic->content !!}<br />
                     @if ($topic->canEdit() == true)
                         <a class="btn btn-primary" href="{{ url('topic/update', [$topic->id]) }}">Edytuj</a>
@@ -29,7 +29,9 @@
                 </div>
             </div>
             @each('forum.post.post', $posts, 'post')
-            {{ $posts->links() }}
+            @if($posts->count() > 0)
+                {{ $posts->links() }}
+            @endif
         </div>
     </div>
 </div>

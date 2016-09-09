@@ -8,11 +8,9 @@
             @each('forum.forum', $forums, 'forum')
         </div>
         <div class="col-md-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Aktywni użytkownicy
-                </div>
-                <div class="panel-body">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">Aktywni użytkownicy</h4>
                     @if(!$activeUsers->isEmpty())
                         @foreach($activeUsers as $user)
                             <a href="{{ $user->getUrl() }}">{{ $user->name . " " }}</a>

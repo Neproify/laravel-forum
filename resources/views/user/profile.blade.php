@@ -3,15 +3,15 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="panel panel-default">
-            <div class="panel-heading">Profil użytkownika {{ $user->name }}</div>
-            <div class="panel-body">
-                Dołączył: {{ $user->created_at }} <br />
-            </div>
-        </div>
-        </div>
-    </div>
+	<div class="row">
+		<div class="col-md-12">
+		  	<div class="card">
+				<div class="card-block">
+					<h4 class="card-title">Profil użytkownika {{ $user->name }}</h4>
+					Dołączył: {{ $user->created_at }} <br />
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 @endsection

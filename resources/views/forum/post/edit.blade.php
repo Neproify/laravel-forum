@@ -4,12 +4,10 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    Edycja odpowiedzi w temacie <a href="{{ $topic->getUrl() }}">{{ $topic->name }}</a>
-                </div>
-                <div class="panel-body">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-block">
+                    <h4 class="card-title">Edycja odpowiedzi w temacie <a href="{{ $topic->getUrl() }}">{{ $topic->name }}</a></h4>
                     <form class="form" role="form" method="POST" action="{{ url('/post/update') }}">
                         {{ csrf_field() }}
 
@@ -17,23 +15,19 @@
 
                         <div class="form-group{{ $errors->has('content') ? ' has-error' : '' }}">
 
-                            <div class="col-md-12">
-                                <textarea id="content" type="text" style="resize: vertical;" class="form-control" name="content" autofocus>{{ $post->content }}</textarea>
+                            <textarea id="content" type="text" style="resize: vertical;" class="form-control" name="content" autofocus>{{ $post->content }}</textarea>
 
-                                @if ($errors->has('content'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('content') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
+                            @if ($errors->has('content'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('content') }}</strong>
+                                </span>
+                            @endif
                         </div>
 
                         <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Edytuj odpowiedź
-                                </button>
-                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                Edytuj odpowiedź
+                            </button>
                         </div>
                     </form>
                 </div>
